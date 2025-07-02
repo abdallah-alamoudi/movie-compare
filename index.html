@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body class="">
+    <header class="bg-purple-200 py-10 px-5 mb-5">
+      <h1 class="text-3xl capitalize">movie fight</h1>
+    </header>
+    <div class="content container mx-auto px-10 gap-5 flex">
+      <div class="left flex-1">
+        <div id="left-autocomplete"></div>
+        <div id="left-summary" class="mt-10 p-4"></div>
+      </div>
+      <div class="right flex-1">
+        <div id="right-autocomplete"></div>
+        <div id="right-summary" class="mt-10 p-4"></div>
+      </div>
+    </div>
+    <div class="test"></div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
