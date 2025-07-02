@@ -8,7 +8,7 @@ let rightMovie;
 const autocompleteConfig = {
   debounceDuration: 500,
   fetchData: async (searchInp) => {
-    const response = await axios.get('http://www.omdbapi.com', {
+    const response = await axios.get('https://www.omdbapi.com', {
       params: {
         apikey: 'ae5cd549',
         s: searchInp,
@@ -33,7 +33,7 @@ autocompleteWidget({
   ...autocompleteConfig,
   root: leftAutocomplete,
   onOptionClick: async ({ imdbID }) => {
-    const res = await axios.get('http://www.omdbapi.com', {
+    const res = await axios.get('https://www.omdbapi.com', {
       params: {
         apikey: 'ae5cd549',
         i: imdbID,
@@ -51,7 +51,7 @@ autocompleteWidget({
   ...autocompleteConfig,
   root: rightAutocomplete,
   onOptionClick: async ({ imdbID }) => {
-    const res = await axios.get('http://www.omdbapi.com', {
+    const res = await axios.get('https://www.omdbapi.com', {
       params: {
         apikey: 'ae5cd549',
         i: imdbID,

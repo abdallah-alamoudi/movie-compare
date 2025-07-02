@@ -26,10 +26,12 @@ const renderSummary = ({
     const number = parseInt(word);
     if (!isNaN(number)) numOfAwards += number;
   });
-  const dollars = parseInt(BoxOffice.replace(/[\$,]/g, ''));
+  console.log(BoxOffice);
+  const dollars = parseInt(BoxOffice?.replace(/[\$,]/g, ''));
+  console.log(dollars);
   const metaScore = parseInt(Metascore);
   const imdbRatingNum = parseFloat(imdbRating);
-  const numOfVotes = parseInt(imdbVotes.replace(/,/g, ''));
+  const numOfVotes = parseInt(imdbVotes?.replace(/,/g, ''));
   console.log(numOfAwards, dollars, metaScore, imdbRatingNum, numOfVotes);
 
   return `
@@ -58,7 +60,9 @@ const renderStatic = (title, val, data) => `
 <div data-value = ${data}
         class="statistic text-green-50 text-3xl mb-5 p-5 shadow-lg hover:bg-green-400  bg-green-500 rounded h-[140px]"
       >
-        <p class="mb-3">${val === 'N/A' ? 'Not Available' : val}</p>
+        <p class="mb-3">${
+          val === 'N/A' || val === undefined ? 'Not Available' : val
+        }</p>
         <p class="text-xl">${title}</p>
       
 </div>
